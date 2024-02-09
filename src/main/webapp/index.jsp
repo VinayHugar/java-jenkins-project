@@ -15,7 +15,7 @@
         <div class="card">
             <div class="card-body">
                 <div align="center" style="padding: 10px;">
-                    <h4>Vinay CGPA Calculator - V1</h4>
+                    <h4>Vinay CGPA Calculator - V1.1</h4>
                 </div>
                 <div class="alert alert-danger" role="alert"> Put 0 for Semesters not Completed. </div>
                 <div id="" class="row">
