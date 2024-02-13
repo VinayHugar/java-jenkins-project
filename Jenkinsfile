@@ -2,14 +2,20 @@ pipeline {
     tools {
         maven 'maven3.8.8'
     }
-    
+
+    environment {
+        SONAR_URL = $CALC_SONAR_URL
+        SONAR_LOGIN = $CALC_SONAR_LOGIN
+        SONAR_PROJECT_KEY = $CALC_SONAR_PROJECT_KEY
+    }
+ 
     agent {
         label 'slaveone'
     }
     
     stages {
         stage('Checkout Code'){
-	    steps {
+	     steps {
 		checkout scm
 	    }
 	}
@@ -26,11 +32,11 @@ pipeline {
         stage('Code Quality') {
             steps {
                 sh '''
-                mvn clean verify sonar:sonar \
-                  -Dsonar.projectKey=vtucalhgr \
-                  -Dsonar.host.url=http://100.24.53.226:9000 \
-                  -Dsonar.login=sqp_15e154c3f8d144a9a67380f33a906514ad52b539
-                '''
+                   mvn clean verify sonar:sonar \
+                      -Dsonar.projectKey=${env.SONAR_PROJECT_KEY} \
+                      -Dsonar.host.url=${env.SONAR_URL} \
+                      -Dsonar.login=${env.SONAR_LOGIN}
+         	'''
             }
         }
         stage('Artifact') {
