@@ -4,10 +4,13 @@ pipeline {
     }
 
     environment {
+	// Define Global properties Environment variables
         SONAR_URL = "${CALC_SONAR_URL}"
         SONAR_LOGIN = "${CALC_SONAR_LOGIN}"
         SONAR_PROJECT_KEY = "${CALC_SONAR_PROJECT_KEY}"
 	TOMCAT_URL = "${CALC_TOMCAT_URL}"
+	    
+	// Define Global credentials ID
 	TOMCAT_CRED_ID = 'dd1e60c4-4455-4c2a-8e0c-6a1f04131638'
     }
  
