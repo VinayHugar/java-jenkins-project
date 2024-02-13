@@ -9,10 +9,10 @@ pipeline {
     
     stages {
         stage('Checkout Code'){
-			steps {
-				checkout scm
-			}
-		}
+	    steps {
+		checkout scm
+	    }
+	}
         stage('Build') {
             steps {
                 sh 'mvn compile'
