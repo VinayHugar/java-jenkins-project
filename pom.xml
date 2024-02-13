@@ -8,12 +8,13 @@
     <packaging>war</packaging>
     <version>1.2.2</version>
     <name>Java Home myweb</name>
-    <url>https://github.com/hgrvinay/VinayHugarCalculator</url> <!-- Change this URL to your project's repository or website -->
+    <url>https://github.com/hgrvinay/VinayHugarCalculator</url>
 
     <properties>
         <docker.image.prefix>kammana</docker.image.prefix>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <maven-war-plugin.version>3.3.1</maven-war-plugin.version> <!-- Update Maven War Plugin version -->
     </properties>
 
     <dependencies>
@@ -25,17 +26,19 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.13.2</version> <!-- Update JUnit version -->
             <scope>test</scope>
         </dependency>
     </dependencies>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>maven1</id>
-            <name>Maven.org</name>
-            <url>http://repo1.maven.org/maven2</url>
-        </pluginRepository>
-    </pluginRepositories>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+            <!-- Other plugins -->
+        </plugins>
+    </build>
 </project>
