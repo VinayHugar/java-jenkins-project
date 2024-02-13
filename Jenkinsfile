@@ -4,9 +4,9 @@ pipeline {
     }
 
     environment {
-        SONAR_URL = $CALC_SONAR_URL
-        SONAR_LOGIN = $CALC_SONAR_LOGIN
-        SONAR_PROJECT_KEY = $CALC_SONAR_PROJECT_KEY
+        SONAR_URL = "${CALC_SONAR_URL}"
+        SONAR_LOGIN = "${CALC_SONAR_LOGIN}"
+        SONAR_PROJECT_KEY = "${CALC_SONAR_PROJECT_KEY}"
     }
  
     agent {
@@ -33,9 +33,9 @@ pipeline {
             steps {
                 sh '''
                    mvn clean verify sonar:sonar \
-                      -Dsonar.projectKey=${env.SONAR_PROJECT_KEY} \
-                      -Dsonar.host.url=${env.SONAR_URL} \
-                      -Dsonar.login=${env.SONAR_LOGIN}
+                      -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                      -Dsonar.host.url=${SONAR_URL} \
+                      -Dsonar.login=${SONAR_LOGIN}
          	'''
             }
         }
