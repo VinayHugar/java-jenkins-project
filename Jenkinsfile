@@ -51,7 +51,7 @@ pipeline {
                     tomcat9(
                         credentialsId: 'dd1e60c4-4455-4c2a-8e0c-6a1f04131638',
                         path: '',
-                        url: '${TOMCAT_URL}'
+                        url: "${TOMCAT_URL}"
                         )
                     ],
                     contextPath: 'app',
