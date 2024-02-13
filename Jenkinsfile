@@ -8,11 +8,11 @@ pipeline {
     }
     
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/VinayHugar/java-jenkins-project.git'
-            }
-        }
+        stage('Checkout Code'){
+			steps {
+				checkout scm
+			}
+		}
         stage('Build') {
             steps {
                 sh 'mvn compile'
