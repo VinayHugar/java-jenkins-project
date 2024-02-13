@@ -1,5 +1,6 @@
 pipeline {
     tools {
+	// Define Maven in Jenkins > Dashboard > Manage Jenkins > Tools > Maven installations
         maven 'maven3.8.8'
     }
 
